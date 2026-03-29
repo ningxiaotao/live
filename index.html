@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Pages 测试页面</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 48px 56px;
+      max-width: 520px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    h1 { font-size: 28px; color: #1a1a2e; margin-bottom: 12px; }
+    .subtitle { color: #666; font-size: 15px; margin-bottom: 32px; line-height: 1.6; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+    .info-item { background: #f8f9ff; border-radius: 10px; padding: 14px; text-align: left; }
+    .info-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+    .info-value { font-size: 14px; color: #333; font-weight: 600; word-break: break-all; }
+    .time-display { background: #f0f4ff; border-radius: 10px; padding: 16px; margin-bottom: 24px; font-size: 13px; color: #555; }
+    #clock { font-size: 32px; font-weight: 700; color: #667eea; letter-spacing: 2px; display: block; margin-top: 4px; }
+    .footer { font-size: 12px; color: #bbb; }
+    .dot { display: inline-block; width: 8px; height: 8px; background: #4caf50; border-radius: 50%; margin-right: 6px; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge"><span class="dot"></span>运行中</div>
+    <h1>GitHub Pages 测试成功！</h1>
+    <p class="subtitle">这是一个静态 HTML 页面，通过 GitHub Pages 直接托管和访问。</p>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">仓库</div>
+        <div class="info-value">ningxiaotao/live</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">分支</div>
+        <div class="info-value">gh-pages</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">文件</div>
+        <div class="info-value">index.html</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">部署方式</div>
+        <div class="info-value">GitHub Pages</div>
+      </div>
+    </div>
+    <div class="time-display">
+      当前时间
+      <span id="clock">--:--:--</span>
+    </div>
+    <div class="footer">Hosted on GitHub Pages &middot; Static HTML</div>
+  </div>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('clock').textContent =
+        pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds());
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
